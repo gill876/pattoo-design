@@ -8,4 +8,6 @@ html {
 
 .navi-bar {
     background-color: white;
+    width: 70%;
+    display: flex;
 }
