@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Route, Switch, useHistory, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 class HomePage extends React.Component {
   render() {
@@ -89,6 +89,21 @@ class LoginContent extends React.Component {
   render() {
     return (
       <div className="login-content">
+        <div className="image-container">
+          <img src="./Coruja-2.png" alt="An Owl"/>
+        </div>
+
+        <div class="form-container">
+          <form id="login-form" method="POST">
+            <div>
+              <input id="user-input" type="text" placeholder="Username"></input>
+            </div>
+            <div>
+              <input id="password-input" type="password" placeholder="Password"></input>
+            </div>
+            <button id="login-button" type="submit">Login</button>
+          </form>
+        </div>
         Login
       </div>
     );
