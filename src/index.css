@@ -18,6 +18,12 @@ html {
     width: 70%;
 }
 
+.login-content {
+    background-color: white;
+    width: 70%;
+    margin-top: 4%;
+}
+
 .home-page {
     display: flex;
     flex-direction: column;
