@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
 class MainPage extends React.Component {
   render() {
@@ -49,13 +49,13 @@ class MainContent extends React.Component {
 
 ReactDOM.render(
   <BrowserRouter>
-       <Switch>
+      <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/users" component={MainPage} />
-        <Route exact path="/agents" component={MainPage} />
-        <Route exact path="/login" component={MainPage} />
-        <Route exact path="/logout" component={MainPage} />
-      </Switch>
-      </BrowserRouter>,
+        <Route path="/users" component={MainPage} />
+        <Route path="/agents" component={MainPage} />
+        <Route path="/login" component={MainPage} />
+        <Route path="/logout" component={MainPage} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
