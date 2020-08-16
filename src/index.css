@@ -24,7 +24,12 @@ html {
 }
 
 .navi-item {
-    margin: 2px;
+    margin: 8px;
     width: fit-content;
-    padding: 0px 15px;
+    padding: 0px 4px;
+}
+
+.navi-item button {
+    width: fit-content;
+    padding: 10px 15px;
 }
