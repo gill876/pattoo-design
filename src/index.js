@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useHistory, Link } from "react-router-dom";
 
 class HomePage extends React.Component {
   render() {
@@ -47,14 +47,14 @@ class NavigationBar extends React.Component {
 
     let button;
     if (isLoggedIn) {
-      button = <NavItem button={"Logout"} onClick={this.handleLogoutClick} />;
+      button = <NavItem button={"Logout"} onClick={this.handleLogoutClick} route={"/logout"}/>;
     } else {
-      button = <NavItem button={"Login"} onClick={this.handleLoginClick} />;
+      button = <NavItem button={"Login"} onClick={this.handleLoginClick} route={"/login"}/>;
     }
 
     return (
       <div className="navi-bar" >
-        <NavItem button={"Home"}/>
+        <NavItem button={"Home"} route={"/"}/>
         <NavItem button={"Users"}/>
         <NavItem button={"Agents"}/>
         {button}
@@ -66,9 +66,11 @@ class NavigationBar extends React.Component {
 class NavItem extends React.Component {
   render() {
     return (
-      <button className="navi-item" onClick={this.props.onClick}>
-        {this.props.button}
-      </button>
+      <Link className="navi-item" to={this.props.route}>
+        <button onClick={this.props.onClick}>
+          {this.props.button}
+        </button>
+      </Link>
     );
   };
 };
