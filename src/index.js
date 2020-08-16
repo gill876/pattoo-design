@@ -109,6 +109,49 @@ class LoginContent extends React.Component {
   };
 };
 
+class UsersContent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Users</h3>
+        <table>
+          <tr>
+            <th></th>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    );
+  };
+};
+
+class UsersRow extends React.Component {
+  render() {
+    const idx_user = this.props.idx_user;
+    const first_name = this.props.first_name;
+    const last_name = this.props.last_name;
+    const username = this.props.username;
+    const password = this.props.password;
+    const enabled = this.props.enabled;
+    const ts_modified = this.props.ts_modified;
+    const ts_created = this.props.created;
+    return (
+      <tr>
+        <td>{idx_user}</td>
+        <td>{first_name}</td>
+        <td>{last_name}</td>
+        <td>{username}</td>
+        <td>{password}</td>
+        <td>{enabled}</td>
+        <td>{ts_modified}</td>
+        <td>{ts_created}</td>
+      </tr>
+    );
+  };
+};
+
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
