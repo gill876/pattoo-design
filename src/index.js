@@ -88,7 +88,7 @@ class MainContent extends React.Component {
 class LoginContent extends React.Component {
   render() {
     return (
-      <div className="login-content">
+      <div className="main-content">
         <div className="image-container">
           <img src="./Coruja-2.png" alt="An Owl"/>
         </div>

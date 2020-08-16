@@ -16,12 +16,9 @@ html {
 .main-content {
     background-color: white;
     width: 70%;
-}
-
-.login-content {
-    background-color: white;
-    width: 70%;
     margin-top: 4%;
+    border-radius: 23px;
+    padding: 2%;
 }
 
 .home-page {
