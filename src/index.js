@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 
-class MainPage extends React.Component {
+class HomePage extends React.Component {
   render() {
     return (
-      <div>
+      <div className="home-page">
         <NavigationBar/>
         <MainContent/>
       </div>
@@ -14,14 +14,50 @@ class MainPage extends React.Component {
   };
 };
 
-class NavigationBar extends React.Component {
+class LoginPage extends React.Component {
   render() {
+    return (
+      <div className="login-page">
+        <NavigationBar/>
+        <LoginContent/>
+      </div>
+    );
+  };
+};
+
+class NavigationBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  };
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+  
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+
+    let button;
+    if (isLoggedIn) {
+      button = <NavItem button={"Logout"} onClick={this.handleLogoutClick} />;
+    } else {
+      button = <NavItem button={"Login"} onClick={this.handleLoginClick} />;
+    }
+
     return (
       <div className="navi-bar" >
         <NavItem button={"Home"}/>
         <NavItem button={"Users"}/>
         <NavItem button={"Agents"}/>
-        <NavItem button={"Login/Logout"}/>
+        {button}
       </div>
     );
   };
@@ -30,7 +66,7 @@ class NavigationBar extends React.Component {
 class NavItem extends React.Component {
   render() {
     return (
-      <button className="navi-item" >
+      <button className="navi-item" onClick={this.props.onClick}>
         {this.props.button}
       </button>
     );
@@ -47,14 +83,24 @@ class MainContent extends React.Component {
   };
 };
 
+class LoginContent extends React.Component {
+  render() {
+    return (
+      <div className="login-content">
+        Login
+      </div>
+    );
+  };
+};
+
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="/users" component={MainPage} />
-        <Route path="/agents" component={MainPage} />
-        <Route path="/login" component={MainPage} />
-        <Route path="/logout" component={MainPage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/users" component={HomePage} />
+        <Route path="/agents" component={HomePage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/logout" component={HomePage} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
