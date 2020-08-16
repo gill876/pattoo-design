@@ -39,3 +39,23 @@ html {
     width: fit-content;
     padding: 10px 15px;
 }
+
+.image-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#login-button {
+    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+    color: white;
+    border-top-right-radius: 15%;
+    border: none;
+    height: 30px;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}

@@ -93,7 +93,7 @@ class LoginContent extends React.Component {
           <img src="./Coruja-2.png" alt="An Owl"/>
         </div>
 
-        <div class="form-container">
+        <div className="form-container">
           <form id="login-form" method="POST">
             <div>
               <input id="user-input" type="text" placeholder="Username"></input>
@@ -104,7 +104,6 @@ class LoginContent extends React.Component {
             <button id="login-button" type="submit">Login</button>
           </form>
         </div>
-        Login
       </div>
     );
   };
