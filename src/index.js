@@ -86,6 +86,33 @@ class MainContent extends React.Component {
 };
 
 class LoginContent extends React.Component {
+  constructor(props){
+    super (props);
+    this.state = {
+      username: "",
+      password: ""
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit(event) {
+    alert('Username: ' + this.state.username + '\nPassword: ' +
+    this.state.password)
+    event.preventDefault()
+  }
+
   render() {
     return (
       <div className="main-content">
@@ -94,12 +121,18 @@ class LoginContent extends React.Component {
         </div>
 
         <div className="form-container">
-          <form id="login-form" method="POST">
+          <form id="login-form" method="POST" onSubmit={this.handleSubmit}>
             <div>
-              <input id="user-input" type="text" placeholder="Username"></input>
+              <input id="user-input" type="text" name="username"
+                placeholder="Username" value={this.state.username}
+                onChange={this.handleInputChange}>
+              </input>
             </div>
             <div>
-              <input id="password-input" type="password" placeholder="Password"></input>
+              <input id="password-input" name="password"
+                type="password" value={this.state.password} 
+                placeholder="Password" onChange={this.handleInputChange}>
+              </input>
             </div>
             <button id="login-button" type="submit">Login</button>
           </form>
@@ -128,6 +161,10 @@ class UsersContent extends React.Component {
 };
 
 class UsersRow extends React.Component {
+  constructor(props){
+    super (props);
+  };
+
   render() {
     const idx_user = this.props.idx_user;
     const first_name = this.props.first_name;
