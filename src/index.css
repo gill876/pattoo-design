@@ -11,3 +11,8 @@ html {
     width: 70%;
     display: flex;
 }
+
+.main-content {
+    background-color: white;
+    width: 70%;
+}

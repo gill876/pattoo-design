@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class MainPage extends React.Component {
   render() {
     return (
-      <NavigationBar/>
+      <div>
+        <NavigationBar/>
+        <MainContent/>
+      </div>
     );
   };
 };
@@ -33,7 +37,25 @@ class NavItem extends React.Component {
   };
 };
 
+class MainContent extends React.Component {
+  render() {
+    return (
+      <div className="main-content">
+        Hello World
+      </div>
+    );
+  };
+};
+
 ReactDOM.render(
-  <MainPage/>,
+  <BrowserRouter>
+       <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/users" component={MainPage} />
+        <Route exact path="/agents" component={MainPage} />
+        <Route exact path="/login" component={MainPage} />
+        <Route exact path="/logout" component={MainPage} />
+      </Switch>
+      </BrowserRouter>,
   document.getElementById('root')
 );
