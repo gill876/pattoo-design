@@ -25,6 +25,17 @@ class LoginPage extends React.Component {
   };
 };
 
+class UsersPage extends React.Component {
+  render() {
+    return (
+      <div className="users-page">
+        <NavigationBar/>
+        <UsersContent/>
+      </div>
+    );
+  };
+};
+
 class NavigationBar extends React.Component {
 
   constructor(props) {
@@ -55,7 +66,7 @@ class NavigationBar extends React.Component {
     return (
       <div className="navi-bar" >
         <NavItem button={"Home"} route={"/"}/>
-        <NavItem button={"Users"}/>
+        <NavItem button={"Users"} route={"/users"}/>
         <NavItem button={"Agents"}/>
         {button}
       </div>
@@ -144,16 +155,24 @@ class LoginContent extends React.Component {
 
 class UsersContent extends React.Component {
   render() {
+
+    const test_user = () => {
+      return (
+        {idx_user: 1,
+        first_name: "Cargill",
+        last_name: "Seiveright",
+        username: "sivrite",
+        ts_modified: "-",
+        ts_created: "2020-08-16"}
+      )
+    }
+
     return (
-      <div>
+      <div className="main-content">
         <h3>Users</h3>
         <table>
-          <tr>
-            <th></th>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
+          <UsersHead/>
+          <UsersRow user={test_user}/>
         </table>
       </div>
     );
@@ -163,28 +182,46 @@ class UsersContent extends React.Component {
 class UsersRow extends React.Component {
   constructor(props){
     super (props);
+    this.state = {
+      enabled: 0
+    }
   };
 
   render() {
-    const idx_user = this.props.idx_user;
-    const first_name = this.props.first_name;
-    const last_name = this.props.last_name;
-    const username = this.props.username;
-    const password = this.props.password;
-    const enabled = this.props.enabled;
-    const ts_modified = this.props.ts_modified;
-    const ts_created = this.props.created;
+    const idx_user = this.props.user.idx_user;
+    const first_name = this.props.user.first_name;
+    const last_name = this.props.user.last_name;
+    const username = this.props.user.username;
+    const ts_modified = this.props.user.ts_modified;
+    const ts_created = this.props.user.created;
     return (
-      <tr>
-        <td>{idx_user}</td>
-        <td>{first_name}</td>
-        <td>{last_name}</td>
-        <td>{username}</td>
-        <td>{password}</td>
-        <td>{enabled}</td>
-        <td>{ts_modified}</td>
-        <td>{ts_created}</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>{idx_user}</td>
+          <td>{first_name}</td>
+          <td>{last_name}</td>
+          <td>{username}</td>
+          <td>{ts_modified}</td>
+          <td>{ts_created}</td>
+        </tr>
+      </tbody>
+    );
+  };
+};
+
+class UsersHead extends React.Component {
+  render() {
+    return (
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+          <th>Modified</th>
+          <th>Created</th>
+        </tr>
+      </thead>
     );
   };
 };
@@ -193,7 +230,7 @@ ReactDOM.render(
   <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/users" component={HomePage} />
+        <Route path="/users" component={UsersPage} />
         <Route path="/agents" component={HomePage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/logout" component={HomePage} />
