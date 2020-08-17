@@ -20,9 +20,10 @@ html {
     padding: 2%;
 }
 
-.home-page {
+.main-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .navi-item {

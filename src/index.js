@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class HomePage extends React.Component {
   render() {
     return (
-      <div className="home-page">
+      <div className="main-page home-page">
         <NavigationBar/>
         <MainContent/>
       </div>
@@ -17,7 +17,7 @@ class HomePage extends React.Component {
 class LoginPage extends React.Component {
   render() {
     return (
-      <div className="login-page">
+      <div className="main-page login-page">
         <NavigationBar/>
         <LoginContent/>
       </div>
@@ -28,7 +28,7 @@ class LoginPage extends React.Component {
 class UsersPage extends React.Component {
   render() {
     return (
-      <div className="users-page">
+      <div className="main-page users-page">
         <NavigationBar/>
         <UsersContent/>
       </div>
