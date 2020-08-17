@@ -156,16 +156,14 @@ class LoginContent extends React.Component {
 class UsersContent extends React.Component {
   render() {
 
-    const test_user = () => {
-      return (
-        {idx_user: 1,
+    const test_user = {
+        idx_user: 1,
         first_name: "Cargill",
         last_name: "Seiveright",
         username: "sivrite",
         ts_modified: "-",
-        ts_created: "2020-08-16"}
-      )
-    }
+        ts_created: "2020-08-16"
+      }
 
     return (
       <div className="main-content">
@@ -193,7 +191,7 @@ class UsersRow extends React.Component {
     const last_name = this.props.user.last_name;
     const username = this.props.user.username;
     const ts_modified = this.props.user.ts_modified;
-    const ts_created = this.props.user.created;
+    const ts_created = this.props.user.ts_created;
     return (
       <tbody>
         <tr>
