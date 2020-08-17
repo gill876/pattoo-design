@@ -38,11 +38,21 @@ html {
     width: calc(19px + 8.5vw);
     height: calc(8px + 4vh);
     font-size: calc(6px + 0.5vw);
+    margin: 0px;
 }
 
 .image-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: calc(10px + 5vh);
+    padding-bottom: calc(10px + 5vh);
+    height: calc(15px + 35vh);
+    width: calc(90px + 35vw);
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #login-button {
@@ -64,4 +74,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#login-item {
+    grid-column: 6/6;
 }

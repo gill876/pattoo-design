@@ -58,16 +58,16 @@ class NavigationBar extends React.Component {
 
     let button;
     if (isLoggedIn) {
-      button = <NavItem button={"Logout"} onClick={this.handleLogoutClick} route={"/logout"}/>;
+      button = <NavItem id="login-item" button={"Logout"} onClick={this.handleLogoutClick} route={"/logout"}/>;
     } else {
-      button = <NavItem button={"Login"} onClick={this.handleLoginClick} route={"/login"}/>;
+      button = <NavItem id="login-item" button={"Login"} onClick={this.handleLoginClick} route={"/login"}/>;
     }
 
     return (
       <div className="navi-bar" >
         <NavItem button={"Home"} route={"/"}/>
         <NavItem button={"Users"} route={"/users"}/>
-        <NavItem button={"Agents"}/>
+        <NavItem button={"Agents"} route={"/agents "}/>
         {button}
       </div>
     );
@@ -76,8 +76,9 @@ class NavigationBar extends React.Component {
 
 class NavItem extends React.Component {
   render() {
+    const id = this.props.id? this.props.id : ""
     return (
-      <Link className="navi-item" to={this.props.route}>
+      <Link id={id} className="navi-item" to={this.props.route}>
         <button onClick={this.props.onClick}>
           {this.props.button}
         </button>
