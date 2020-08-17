@@ -182,8 +182,16 @@ class UsersRow extends React.Component {
   constructor(props){
     super (props);
     this.state = {
-      enabled: 0
+      enabled: "0"
     }
+
+    this.handleChange = this.handleChange.bind(this);
+  };
+
+  handleChange(event) {
+    this.setState({
+      enabled: event.target.value
+    });
   };
 
   render() {
@@ -200,6 +208,12 @@ class UsersRow extends React.Component {
           <td>{first_name}</td>
           <td>{last_name}</td>
           <td>{username}</td>
+          <td>
+            <select value={this.state.enabled} onChange={this.handleChange}>
+              <option value="1">Enabled</option>
+              <option value="0">Disabled</option>
+            </select>
+          </td>
           <td>{ts_modified}</td>
           <td>{ts_created}</td>
         </tr>
