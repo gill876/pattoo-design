@@ -27,14 +27,13 @@ html {
 }
 
 .navi-item {
-    margin: 8px;
-    width: fit-content;
-    padding: 0px 4px;
+    margin: 1%;
 }
 
 .navi-item button {
-    width: fit-content;
-    padding: 10px 15px;
+    width: calc(19px + 8.5vw);
+    height: 100%;
+    font-size: calc(6px + 0.5vw);
 }
 
 .image-container {
