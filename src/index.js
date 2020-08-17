@@ -36,6 +36,17 @@ class UsersPage extends React.Component {
   };
 };
 
+class AgentsPage extends React.Component {
+  render() {
+    return (
+      <div className="main-page agents-page">
+        <NavigationBar/>
+        <AgentsContent/>
+      </div>
+    );
+  };
+};
+
 class NavigationBar extends React.Component {
 
   constructor(props) {
@@ -67,7 +78,7 @@ class NavigationBar extends React.Component {
       <div className="navi-bar" >
         <NavItem button={"Home"} route={"/"}/>
         <NavItem button={"Users"} route={"/users"}/>
-        <NavItem button={"Agents"} route={"/agents "}/>
+        <NavItem button={"Agents"} route={"/agents"}/>
         {button}
       </div>
     );
@@ -178,6 +189,77 @@ class UsersContent extends React.Component {
   };
 };
 
+class AgentsContent extends React.Component {
+  render() {
+
+    const test_agent = {
+        idx_agent: 1,
+        idx_pair_xlate_group: 1,
+        agent_id: "agent-0001",
+        agent_polled_target: "target-0001",
+        agent_program: "pattoo_agent_os_linux",
+        ts_modified: "-",
+        ts_created: "2020-08-17"
+      }
+
+    return (
+      <div className="main-content">
+        <h3>Agents</h3>
+        <table>
+          <AgentsHead/>
+          <AgentsRow agent={test_agent}/>
+        </table>
+      </div>
+    );
+  };
+};
+
+class AgentsRow extends React.Component {
+  constructor(props){
+    super (props);
+    this.state = {
+      enabled: "0"
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+  };
+
+  handleChange(event) {
+    this.setState({
+      enabled: event.target.value
+    });
+  };
+
+  render() {
+    const idx_agent = this.props.agent.idx_agent;
+    const idx_pair_xlate_group = this.props.agent.idx_pair_xlate_group;
+    const agent_id = this.props.agent.agent_id;
+    const agent_polled_target = this.props.agent.agent_polled_target;
+    const agent_program = this.props.agent.agent_program;
+    const ts_modified = this.props.agent.ts_modified;
+    const ts_created = this.props.agent.ts_created;
+    return (
+      <tbody>
+        <tr>
+          <td>{idx_agent}</td>
+          <td>{idx_pair_xlate_group}</td>
+          <td>{agent_id}</td>
+          <td>{agent_polled_target}</td>
+          <td>{agent_program}</td>
+          <td>
+            <select value={this.state.enabled} onChange={this.handleChange}>
+              <option value="1">Enabled</option>
+              <option value="0">Disabled</option>
+            </select>
+          </td>
+          <td>{ts_modified}</td>
+          <td>{ts_created}</td>
+        </tr>
+      </tbody>
+    );
+  };
+};
+
 class UsersRow extends React.Component {
   constructor(props){
     super (props);
@@ -239,14 +321,33 @@ class UsersHead extends React.Component {
   };
 };
 
+class AgentsHead extends React.Component {
+  render() {
+    return (
+      <thead>
+        <tr>
+          <th>idx_agent</th>
+          <th>idx_pair_xlate_group</th>
+          <th>agent_id</th>
+          <th>agent_polled_target</th>
+          <th>agent_program</th>
+          <th>enabled</th>
+          <th>ts_modified</th>
+          <th>ts_created</th>
+        </tr>
+      </thead>
+    );
+  };
+};
+
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/users" component={UsersPage} />
-        <Route path="/agents" component={HomePage} />
+        <Route path="/agents" component={AgentsPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/logout" component={HomePage} />
+        <Route path="/logout" component={LoginPage} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
