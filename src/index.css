@@ -127,4 +127,7 @@ table.pattoo-table thead th:first-child {
     border-left: none;
 }
 
-
+table.pattoo-table tbody select {
+    font-size: inherit;
+    width: 100%;
+}
