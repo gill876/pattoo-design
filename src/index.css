@@ -48,9 +48,10 @@ html {
 }
 
 .image-container {
+    margin-top: calc(10px + 4.5vh);
     padding-top: calc(10px + 5vh);
     padding-bottom: calc(10px + 5vh);
-    height: calc(15px + 35vh);
+    height: calc(15px + 30vh);
     width: calc(90px + 35vw);
     display: flex;
     justify-content: center;
@@ -90,6 +91,11 @@ html {
     border: none;
     border-bottom: 2px solid #808080;
     padding-bottom: calc(4px + 1.2vh);
+}
+
+.form-container button {
+    padding-bottom: calc(10px + 1vh);
+    margin-bottom: calc(10px + 10vh);
 }
 
 table.pattoo-table {
