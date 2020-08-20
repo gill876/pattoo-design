@@ -263,7 +263,11 @@ class AgentsRow extends React.Component {
       <tbody>
         <tr>
           <td>{agent_id}</td>
-          <td>{agent_polled_target}</td>
+          <td>
+            <Link className="target-anchor" to={"/"}>
+                {agent_polled_target}
+            </Link>
+          </td>
           <td>{agent_program}</td>
           <td>
             <select value={this.state.enabled} onChange={this.handleChange}>
