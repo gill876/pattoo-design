@@ -270,10 +270,10 @@ class AgentsRow extends React.Component {
           </td>
           <td>{agent_program}</td>
           <td>
-            <select value={this.state.enabled} onChange={this.handleChange}>
-              <option value="1">Enabled</option>
-              <option value="0">Disabled</option>
-            </select>
+          <label class="toggle-switch">
+            <input type="checkbox"></input>
+            <span class="toggle-slider"></span>
+          </label>
           </td>
           <td>{ts_modified}</td>
           <td>{ts_created}</td>
