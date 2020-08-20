@@ -85,3 +85,38 @@ html {
     border-bottom: 2px solid #808080;
     padding-bottom: calc(4px + 1.2vh);
 }
+
+table.pattoo-table {
+    border: 0.3em solid #111111;
+    background-color: #c0c5ce;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table.pattoo-table td, table.pattoo-table th {
+    border: 0.1em solid #111111;
+    padding: 0.3em 0.2em;
+}
+
+table.pattoo-table thead {
+    background: #c0c5ce;
+    border-bottom: 0em solid #111111;
+}
+
+table.pattoo-table thead th {
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    border-left: 0.3em solid #111111;
+}
+
+table.pattoo-table thead th {
+    border-bottom: 0.3em solid #111111;
+}
+
+table.pattoo-table thead th:first-child {
+    border-left: none;
+}
+
+
