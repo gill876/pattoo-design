@@ -89,6 +89,7 @@ class MainContent extends React.Component {
       <div className="main-content">
         Hello World
         <AddUserForm/>
+        <TargetItem/>
       </div>
     );
   };
@@ -438,6 +439,39 @@ class AddUserForm extends React.Component {
     );
   }
 }
+
+class TargetItem extends React.Component {
+  render() {
+    return (
+      <div className="target-item">
+        <div className="target-datapoint">
+          <h3>Datapoint Name</h3>
+          <p>Replace with prop</p>
+        </div>
+
+        <div className="target-old-data">
+          <h3>Oldest Data</h3>
+          <p>Replace with prop</p>
+        </div>
+
+        <div className="target-new-data">
+          <h3>Newest Data</h3>
+          <p>Replace with prop</p>
+        </div>
+
+        <div className="target-toggle-switch">
+          <h3>Enable Datapoint</h3>
+          <p>Replace with toggle switch</p>
+        </div>
+
+        <div>
+          <h3>Purge Data</h3>
+          <p>Replace with Pickers</p>
+        </div>
+      </div>
+    );
+  };
+};
 
 ReactDOM.render(
   <BrowserRouter>
