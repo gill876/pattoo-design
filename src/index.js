@@ -88,6 +88,7 @@ class MainContent extends React.Component {
     return (
       <div className="main-content">
         Hello World
+        <AddUserForm/>
       </div>
     );
   };
@@ -363,6 +364,80 @@ class AgentsHead extends React.Component {
     );
   };
 };
+
+class AddUserForm extends React.Component {
+  constructor(props) {
+    super (props);
+    this.state = {
+      firstname: "",
+      lastname: "",
+      username: "",
+      password: "",
+      confirmpassword: ""
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit(event) {
+    alert('Username: ' + this.state.username + '\nPassword: ' +
+    this.state.password)
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <div className="add-user-form">
+        <form>
+          <div className="form-group">
+            <input type="text" name="first-name"
+            placeholder="First Name" value={this.state.firstname}
+            onChange={this.handleInputChange}></input>
+          </div>
+
+          <div className="form-group">
+            <input type="text" name="last-name"
+            placeholder="Last Name" value={this.state.lastname}
+            onChange={this.handleInputChange}></input>
+          </div>
+
+          <div className="form-group">
+            <input type="text" name="username"
+            placeholder="Username" value={this.state.username}
+            onChange={this.handleInputChange}></input>
+          </div>
+
+          <div className="form-group">
+            <input id="password-input" name="password"
+            type="password" value={this.state.password}
+            placeholder="Password" onChange={this.handleInputChange}></input>
+          </div>
+
+          <div className="form-group">
+            <input id="password-input" name="confirmpassword"
+            type="password" value={this.state.confirmpassword}
+            placeholder="Confirm Password" onChange={this.handleInputChange}></input>
+          </div>
+
+          <div className="form-group">
+            <button type="submit">Add User</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <BrowserRouter>
