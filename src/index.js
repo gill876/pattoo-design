@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 class HomePage extends React.Component {
   render() {
@@ -89,6 +91,7 @@ class MainContent extends React.Component {
       <div className="main-content">
         Hello World
         <AddUserForm/>
+        <AddUserComponent/>
       </div>
     );
   };
@@ -438,6 +441,40 @@ class AddUserForm extends React.Component {
     );
   }
 }
+
+class AddUserComponent extends React.Component {
+  constructor(props) {
+    super (props);
+    this.state = {
+      isOpen: false
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Button color="primary" onClick={this.handleChange} style={{ marginBottom: '1rem' }}>Toggle</Button>
+        <Collapse isOpen={this.state.isOpen}>
+          <Card>
+            <CardBody>
+            Anim pariatur cliche reprehenderit,
+            enim eiusmod high life accusamus terry richardson ad squid. Nihil
+            anim keffiyeh helvetica, craft beer labore wes anderson cred
+            nesciunt sapiente ea proident.
+            </CardBody>
+          </Card>
+        </Collapse>
+      </div>
+    );
+  };
+};
 
 ReactDOM.render(
   <BrowserRouter>
