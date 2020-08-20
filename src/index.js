@@ -192,8 +192,6 @@ class AgentsContent extends React.Component {
   render() {
 
     const test_agent = {
-        idx_agent: 1,
-        idx_pair_xlate_group: 1,
         agent_id: "agent-0001",
         agent_polled_target: "target-0001",
         agent_program: "pattoo_agent_os_linux",
@@ -230,8 +228,6 @@ class AgentsRow extends React.Component {
   };
 
   render() {
-    const idx_agent = this.props.agent.idx_agent;
-    const idx_pair_xlate_group = this.props.agent.idx_pair_xlate_group;
     const agent_id = this.props.agent.agent_id;
     const agent_polled_target = this.props.agent.agent_polled_target;
     const agent_program = this.props.agent.agent_program;
@@ -240,8 +236,6 @@ class AgentsRow extends React.Component {
     return (
       <tbody>
         <tr>
-          <td>{idx_agent}</td>
-          <td>{idx_pair_xlate_group}</td>
           <td>{agent_id}</td>
           <td>{agent_polled_target}</td>
           <td>{agent_program}</td>
@@ -326,8 +320,6 @@ class AgentsHead extends React.Component {
     return (
       <thead>
         <tr>
-          <th>idx_agent</th>
-          <th>idx_pair_xlate_group</th>
           <th>agent_id</th>
           <th>agent_polled_target</th>
           <th>agent_program</th>
