@@ -48,12 +48,11 @@ html {
     cursor: pointer;
     width: calc(19px + 8.5vw);
     height: calc(8px + 4vh);
-    font-size: calc(6px + 0.5vw);
+    font-size: calc(6px + 0.9vw);
     margin: 0px;
 }
 
 .navi-item button:hover {
-    text-decoration: underline;
     background-color: black;
     color: white;
 }
@@ -81,7 +80,6 @@ html {
     height: 30px;
     padding: 2px 20px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     margin-top: calc(4px + 3vh);
     cursor: pointer;
