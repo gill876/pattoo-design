@@ -18,7 +18,6 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="main-page login-page">
-        <NavigationBar/>
         <LoginContent/>
       </div>
     );

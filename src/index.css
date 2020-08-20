@@ -65,7 +65,7 @@ html {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 4px 2px;
+    margin-top: calc(4px + 3vh);
     cursor: pointer;
     border-radius: 16px;
 }
@@ -78,4 +78,10 @@ html {
 
 #login-item {
     grid-column: 6/6;
+}
+
+.form-container input {
+    border: none;
+    border-bottom: 2px solid #808080;
+    padding-bottom: calc(4px + 1.2vh);
 }
