@@ -443,6 +443,24 @@ class AddUserForm extends React.Component {
 }
 
 class TargetItem extends React.Component {
+  constructor(props) {
+    super (props);
+    this.state = {
+      startDate: new Date(),
+      endDate: new Date()
+    };
+  };
+
+  handleChange(event) {
+    const target =  event.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
   render() {
     return (
       <div className="target-item">
@@ -468,37 +486,32 @@ class TargetItem extends React.Component {
 
         <div>
           <h3>Purge Data</h3>
-          <p>Replace with Pickers</p>
-          <CalendarPick/>
+          <div>
+            <h5>Save from:</h5>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+              timeInputLabel="Time:"
+              dateFormat="yyyy/MM/dd HH:mm"
+              showTimeInput
+            />
+          </div>
+
+          <div>
+            <h5>Save up to:</h5>
+            <DatePicker
+              selected={this.state.endDate}
+              onChange={this.handleChange}
+              timeInputLabel="Time:"
+              dateFormat="yyyy/MM/dd HH:mm"
+              showTimeInput
+            />
+          </div>
         </div>
       </div>
     );
   };
 };
-
-class CalendarPick extends React.Component {
-  state = {
-    startDate: new Date()
-  };
- 
-  handleChange = date => {
-    this.setState({
-      startDate: date
-    });
-  };
- 
-  render() {
-    return (
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-        timeInputLabel="Time:"
-        dateFormat="yyyy/MM/dd HH:mm"
-        showTimeInput
-      />
-    );
-  }
-}
 
 ReactDOM.render(
   <BrowserRouter>
