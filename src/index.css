@@ -214,6 +214,24 @@ input:checked + .toggle-slider:before {
 
 .target-item {
     display: flex;
-    border: 0.4em solid #111111;
-    padding: 2em;
+    border: 0.2em solid #111111;
+    border-radius: 20px;
+    width: inherit;
+    height: calc(120px + 5vh);
+    overflow-x: scroll;
+    font-size: calc(3px + 0.7vw);
+}
+
+.target-item > div {
+    margin: auto;
+    border-left: 0.1em solid #111111;
+    padding: 0px calc(2px + 2vw);
+    align-self: center;
+    height: inherit;
+    float: left;
+    white-space: nowrap;
+}
+
+.target-data-age {
+    align-items: center;
 }

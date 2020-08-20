@@ -447,14 +447,17 @@ class TargetItem extends React.Component {
     super (props);
     this.state = {
       startDate: new Date(),
-      endDate: new Date()
+      endDate: new Date(),
+      enabled: false
     };
+
+    this.handleChange = this.handleChange.bind(this);
   };
 
   handleChange(event) {
     const target =  event.target;
     const name = target.name;
-    const value = target.value;
+    const value = (name === 'enabled')? !target.value : target.value;
 
     this.setState({
       [name]: value
@@ -469,19 +472,26 @@ class TargetItem extends React.Component {
           <p>Replace with prop</p>
         </div>
 
-        <div className="target-old-data">
-          <h3>Oldest Data</h3>
+        <div className="target-data-age">
+          <h3>Data Age</h3>
+          <div className="target-old-data">
+          <h4>Oldest Data</h4>
           <p>Replace with prop</p>
-        </div>
-
-        <div className="target-new-data">
-          <h3>Newest Data</h3>
+          </div>
+          
+          <div className="target-new-data">
+          <h4>Newest Data</h4>
           <p>Replace with prop</p>
+          </div>
         </div>
 
         <div className="target-toggle-switch">
           <h3>Enable Datapoint</h3>
-          <p>Replace with toggle switch</p>
+          <label class="toggle-switch">
+            <input type="checkbox" defaultChecked={this.state.enabled}
+            onChange={this.handleChange}></input>
+            <span class="toggle-slider"></span>
+          </label>
         </div>
 
         <div>
