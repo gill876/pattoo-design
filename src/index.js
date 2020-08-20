@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import './index.css';
+import "react-datepicker/dist/react-datepicker.css";
 
 class HomePage extends React.Component {
   render() {
@@ -467,11 +469,33 @@ class TargetItem extends React.Component {
         <div>
           <h3>Purge Data</h3>
           <p>Replace with Pickers</p>
+          <CalendarPick/>
         </div>
       </div>
     );
   };
 };
+
+class CalendarPick extends React.Component {
+  state = {
+    startDate: new Date()
+  };
+ 
+  handleChange = date => {
+    this.setState({
+      startDate: date
+    });
+  };
+ 
+  render() {
+    return (
+      <DatePicker
+        selected={this.state.startDate}
+        onChange={this.handleChange}
+      />
+    );
+  }
+}
 
 ReactDOM.render(
   <BrowserRouter>
