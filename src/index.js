@@ -270,11 +270,11 @@ class AgentsRow extends React.Component {
           </td>
           <td>{agent_program}</td>
           <td>
-          <label class="toggle-switch">
-            <input type="checkbox" defaultChecked={this.state.enabled}
-            onChange={this.handleChange}></input>
-            <span class="toggle-slider"></span>
-          </label>
+            <label class="toggle-switch">
+              <input type="checkbox" defaultChecked={this.state.enabled}
+              onChange={this.handleChange}></input>
+              <span class="toggle-slider"></span>
+            </label>
           </td>
           <td>{ts_modified}</td>
           <td>{ts_created}</td>
@@ -288,7 +288,7 @@ class UsersRow extends React.Component {
   constructor(props){
     super (props);
     this.state = {
-      enabled: "0"
+      enabled: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -296,7 +296,7 @@ class UsersRow extends React.Component {
 
   handleChange(event) {
     this.setState({
-      enabled: event.target.value
+      enabled: !this.state.enabled
     });
   };
 
@@ -315,10 +315,11 @@ class UsersRow extends React.Component {
           <td>{last_name}</td>
           <td>{username}</td>
           <td>
-            <select value={this.state.enabled} onChange={this.handleChange}>
-              <option value="1">Enabled</option>
-              <option value="0">Disabled</option>
-            </select>
+            <label class="toggle-switch">
+              <input type="checkbox" defaultChecked={this.state.enabled}
+              onChange={this.handleChange}></input>
+              <span class="toggle-slider"></span>
+            </label>
           </td>
           <td>{ts_modified}</td>
           <td>{ts_created}</td>
