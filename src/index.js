@@ -178,7 +178,7 @@ class UsersContent extends React.Component {
 
     return (
       <div className="main-content">
-        <h3>Users</h3>
+        <h1>Users</h1>
         <table className="pattoo-table users-table">
           <UsersHead/>
           <UsersRow user={test_user}/>
@@ -203,7 +203,7 @@ class AgentsContent extends React.Component {
 
     return (
       <div className="main-content">
-        <h3>Agents</h3>
+        <h1>Agents</h1>
         <table className="pattoo-table agents-table">
           <AgentsHead/>
           <AgentsRow agent={test_agent}/>
