@@ -107,7 +107,7 @@ table.pattoo-table {
     text-align: center;
     border-collapse: collapse;
     table-layout: fixed;
-    width: auto;
+    width: inherit;
     overflow-y: scroll;
     height: auto;
     display: block;
