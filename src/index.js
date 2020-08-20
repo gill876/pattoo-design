@@ -206,20 +206,31 @@ class UsersContent extends React.Component {
 class AgentsContent extends React.Component {
   render() {
 
-    const test_agent = {
-        agent_id: "agent-0001",
-        agent_polled_target: "target-0001",
-        agent_program: "pattoo_agent_os_linux",
-        ts_modified: "-",
-        ts_created: "2020-08-17"
-      }
+    const test_agents = [
+      {agent_id: "agent-0001", agent_polled_target: "localhost", agent_program: "pattoo_agent_snmp",
+        ts_modified: "-", ts_created: "2020-08-17"
+      },
+      {agent_id: "agent-0002", agent_polled_target: "example.org", agent_program: "pattoo_agent_os_linux",
+        ts_modified: "-", ts_created: "2020-08-19"
+      },
+      {agent_id: "agent-0003", agent_polled_target: "localhost", agent_program: "pattoo_agent_os_linux",
+        ts_modified: "-", ts_created: "2020-08-19"
+      },
+      {agent_id: "agent-0004", agent_polled_target: "example.com", agent_program: "pattoo_agent_snmp",
+        ts_modified: "2020-08-20", ts_created: "2020-08-19"
+      },
+    ]
+
+    const agent_row = test_agents.map((agent)=>
+      <AgentsRow key={agent.agent_id} agent={agent}/>
+    );
 
     return (
       <div className="main-content">
         <h1>Agents</h1>
         <table className="pattoo-table agents-table">
           <AgentsHead/>
-          <AgentsRow agent={test_agent}/>
+          {agent_row}
         </table>
       </div>
     );
