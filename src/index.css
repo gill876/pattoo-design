@@ -91,6 +91,8 @@ table.pattoo-table {
     background-color: #c0c5ce;
     text-align: center;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
 }
 
 table.pattoo-table td, table.pattoo-table th {
@@ -104,7 +106,8 @@ table.pattoo-table thead {
 }
 
 table.pattoo-table thead th {
-    font-size: 1em;
+    font-size: calc(1px + 1.5vw);
+    word-wrap: break-word;
     font-weight: bold;
     color: black;
     text-align: left;
@@ -113,6 +116,11 @@ table.pattoo-table thead th {
 
 table.pattoo-table thead th {
     border-bottom: 0.3em solid #111111;
+}
+
+table.pattoo-table tbody td {
+    font-size: calc(1px + 1.5vw);
+    word-wrap: break-word;
 }
 
 table.pattoo-table thead th:first-child {
