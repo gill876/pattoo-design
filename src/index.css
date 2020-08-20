@@ -11,6 +11,9 @@ html {
     width: 70%;
     display: grid;
     grid-template-areas: "home user agent . . login";
+    margin-top: calc(5px + 3.8vh);
+    padding: 0px calc(2px + 1.8vw);
+    border-radius: 26px;
 }
 
 .main-content {
