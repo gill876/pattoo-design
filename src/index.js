@@ -50,35 +50,21 @@ class NavigationBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
+    this.state = {isLoggedIn: true};
   };
 
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
-  }
-
   handleLogoutClick() {
-    this.setState({isLoggedIn: false});
+    this.setState({isLoggedIn: true});
   }
   
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
-
-    let button;
-    if (isLoggedIn) {
-      button = <NavItem id="login-item" button={"Logout"} onClick={this.handleLogoutClick} route={"/admin/logout"}/>;
-    } else {
-      button = <NavItem id="login-item" button={"Login"} onClick={this.handleLoginClick} route={"/admin/login"}/>;
-    }
-
     return (
       <div className="navi-bar" >
         <NavItem button={"Home"} route={"/admin"}/>
         <NavItem button={"Users"} route={"/admin/users"}/>
         <NavItem button={"Agents"} route={"/admin/agents"}/>
-        {button}
+        <NavItem id="login-item" button={"Logout"} onClick={this.handleLogoutClick} route={"/admin/logout"}/>
       </div>
     );
   };
