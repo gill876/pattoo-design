@@ -399,7 +399,7 @@ class AddUserForm extends React.Component {
   render() {
     return (
       <div className="add-user-form">
-        <form>
+        <form method="POST" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input type="text" name="first-name"
             placeholder="First Name" value={this.state.firstname}
