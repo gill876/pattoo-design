@@ -68,16 +68,16 @@ class NavigationBar extends React.Component {
 
     let button;
     if (isLoggedIn) {
-      button = <NavItem id="login-item" button={"Logout"} onClick={this.handleLogoutClick} route={"/logout"}/>;
+      button = <NavItem id="login-item" button={"Logout"} onClick={this.handleLogoutClick} route={"/admin/logout"}/>;
     } else {
-      button = <NavItem id="login-item" button={"Login"} onClick={this.handleLoginClick} route={"/login"}/>;
+      button = <NavItem id="login-item" button={"Login"} onClick={this.handleLoginClick} route={"/admin/login"}/>;
     }
 
     return (
       <div className="navi-bar" >
-        <NavItem button={"Home"} route={"/"}/>
-        <NavItem button={"Users"} route={"/users"}/>
-        <NavItem button={"Agents"} route={"/agents"}/>
+        <NavItem button={"Home"} route={"/admin"}/>
+        <NavItem button={"Users"} route={"/admin/users"}/>
+        <NavItem button={"Agents"} route={"/admin/agents"}/>
         {button}
       </div>
     );
@@ -139,7 +139,7 @@ class LoginContent extends React.Component {
     return (
       <div className="main-content">
         <div className="image-container">
-          <img src="./Coruja-2.png" alt="An Owl"/>
+          <img src="../Coruja-2.png" alt="An Owl"/>
         </div>
 
         <div className="form-container">
@@ -343,11 +343,11 @@ class AgentsHead extends React.Component {
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/users" component={UsersPage} />
-        <Route path="/agents" component={AgentsPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/logout" component={LoginPage} />
+        <Route exact path="/admin" component={HomePage} />
+        <Route path="/admin/users" component={UsersPage} />
+        <Route path="/admin/agents" component={AgentsPage} />
+        <Route path="/admin/login" component={LoginPage} />
+        <Route path="/admin/logout" component={LoginPage} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
