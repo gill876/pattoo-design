@@ -241,7 +241,7 @@ class AgentsRow extends React.Component {
   constructor(props){
     super (props);
     this.state = {
-      enabled: "0"
+      enabled: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -249,7 +249,7 @@ class AgentsRow extends React.Component {
 
   handleChange(event) {
     this.setState({
-      enabled: event.target.value
+      enabled: !this.state.enabled
     });
   };
 
@@ -271,7 +271,8 @@ class AgentsRow extends React.Component {
           <td>{agent_program}</td>
           <td>
           <label class="toggle-switch">
-            <input type="checkbox"></input>
+            <input type="checkbox" defaultChecked={this.state.enabled}
+            onChange={this.handleChange}></input>
             <span class="toggle-slider"></span>
           </label>
           </td>
