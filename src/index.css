@@ -105,6 +105,9 @@ table.pattoo-table {
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+    overflow-y: scroll;
+    height: auto;
+    display: block;
 }
 
 table.pattoo-table td, table.pattoo-table th {
@@ -118,8 +121,7 @@ table.pattoo-table thead {
 }
 
 table.pattoo-table thead th {
-    font-size: calc(1px + 1.5vw);
-    word-wrap: break-word;
+    font-size: calc(3px + 1vw);
     font-weight: bold;
     color: black;
     text-align: left;
@@ -131,8 +133,7 @@ table.pattoo-table thead th {
 }
 
 table.pattoo-table tbody td {
-    font-size: calc(1px + 1.5vw);
-    word-wrap: break-word;
+    font-size: calc(3px + 1vw);
 }
 
 table.pattoo-table thead th:first-child {
