@@ -153,21 +153,50 @@ class LoginContent extends React.Component {
 class UsersContent extends React.Component {
   render() {
 
-    const test_user = {
+    const test_users = [
+      {
         idx_user: 1,
         first_name: "Cargill",
         last_name: "Seiveright",
         username: "sivrite",
         ts_modified: "-",
         ts_created: "2020-08-16"
-      }
+      },
+      {
+        idx_user: 2,
+        first_name: "John",
+        last_name: "Bronw",
+        username: "jbrown",
+        ts_modified: "-",
+        ts_created: "2020-08-19"
+      },
+      {
+        idx_user: 3,
+        first_name: "Mary",
+        last_name: "Jane",
+        username: "mjane",
+        ts_modified: "-",
+        ts_created: "2020-08-19"
+      },
+      {
+        idx_user: 4,
+        first_name: "Joy",
+        last_name: "Campbell",
+        username: "jcamp",
+        ts_modified: "-",
+        ts_created: "2020-08-19"
+      },
+    ]
 
+    const user_rows = test_users.map((user)=>
+      <UsersRow key={user.idx_user} user={user}/>
+    );
     return (
       <div className="main-content">
         <h1>Users</h1>
         <table className="pattoo-table users-table">
           <UsersHead/>
-          <UsersRow user={test_user}/>
+          {user_rows}
         </table>
       </div>
     );
