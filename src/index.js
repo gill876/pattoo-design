@@ -508,6 +508,11 @@ class TargetItem extends React.Component {
             />
           </div>
         </div>
+
+        <div className="target-submit">
+          <h3>Save Changes</h3>
+          <button>Confirm</button>
+        </div>
       </div>
     );
   };
