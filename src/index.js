@@ -493,7 +493,7 @@ class CalendarPick extends React.Component {
         selected={this.state.startDate}
         onChange={this.handleChange}
         timeInputLabel="Time:"
-        dateFormat="MM/dd/yyyy HH:mm"
+        dateFormat="yyyy/MM/dd HH:mm"
         showTimeInput
       />
     );
