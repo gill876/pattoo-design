@@ -38,19 +38,24 @@ html {
 
 .navi-item {
     margin: 1%;
+    display: flex;
+    justify-content: center;
 }
 
 .navi-item button {
     border: none;
     background: none;
     cursor: pointer;
-}
-
-.navi-item button {
     width: calc(19px + 8.5vw);
     height: calc(8px + 4vh);
     font-size: calc(6px + 0.5vw);
     margin: 0px;
+}
+
+.navi-item button:hover {
+    text-decoration: underline;
+    background-color: black;
+    color: white;
 }
 
 .image-container {
