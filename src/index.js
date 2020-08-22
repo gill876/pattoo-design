@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from './Home';
 
-import './styles.css';
+import './index.css';
 
 ReactDOM.render(
     <BrowserRouter>
