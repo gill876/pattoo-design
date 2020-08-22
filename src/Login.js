@@ -54,7 +54,7 @@ class Login extends React.Component {
                             placeholder="Password" onChange={this.handleInputChange}
                             className="border-b-2 border-gray-500 mt-3 text-center shadow-md rounded-full focus:outline-none focus:shadow-outline">
                         </input>
-                        <button id="login-button" className="btn mt-5 border-2 border-gray-500 shadow-md text-gray-800 hover:text-white hover:bg-gray-500 transition ease-out duration-500" type="submit">Login</button>
+                        <button id="login-button" className="btn mt-5 border-2 border-gray-500 shadow-md text-gray-800 hover:text-white hover:bg-gray-500 transition ease-out duration-500 focus:outline-none" type="submit">Login</button>
                     </form>
                 </div>  
             </div>
