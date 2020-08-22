@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 /*Import custom components*/
 import Home from './Home';
+import Login from './Login';
 
 /*Import stylesheet*/
 import './index.css';
@@ -16,6 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
           <Route exact path="/admin" component={Home} />
+          <Route path="/login" component={Login} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')
