@@ -92,7 +92,7 @@ class AgentsRow extends React.Component {
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
             <td className="w-1/3 text-left py-3 px-4">{agent_id}</td>
-            <td className="w-1/3 text-left py-3 px-4 hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
+            <td className="w-1/3 text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
             <td className="w-1/3 text-left py-3 px-4">{agent_program}</td>
             <td className="text-center py-3 px-4">
                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
