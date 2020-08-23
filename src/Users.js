@@ -3,7 +3,14 @@ import React from 'react';
 import Navigation from './Navigation';
 
 class Users extends React.Component {
-    render() {
+        render() {
+        const test_users = [{idx_user: 1,first_name: "Cargill",last_name: "Seiveright",username: "sivrite",user_type: "admin"},
+                            {idx_user: 2,first_name: "John",last_name: "Brown",username: "jbrown",user_type: "standard"},
+                            {idx_user: 3,first_name: "Mary",last_name: "Jane",username: "mjane",user_type: "standard"},
+                            {idx_user: 4,first_name: "Joy",last_name: "Campbell",username: "jcamp",user_type: "standard"}]
+        const user_rows = test_users.map((user)=>
+            <UsersRow key={user.idx_user} user={user}/>
+        );
         return (
             <div className="grid md:grid-cols-4">
                 <Navigation/>
@@ -11,65 +18,8 @@ class Users extends React.Component {
                     <div className="md:px-32 py-8 w-full">
                         <div className="shadow overflow-y-scroll rounded border-b border-gray-200">
                             <table className="min-w-full bg-white">
-                                <thead className="bg-gray-800 text-white">
-                                    <tr>
-                                    <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                                    <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last name</th>
-                                    <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Toggle</th>
-                                    <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Phone</th>
-                                    <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-gray-700">
-                                <tr>
-                                    <td className="w-1/3 text-left py-3 px-4">Lian</td>
-                                    <td className="w-1/3 text-left py-3 px-4">Smith</td>
-                                    <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                    </td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                </tr>
-                                <tr className="bg-gray-100">
-                                    <td className="w-1/3 text-left py-3 px-4">Emma</td>
-                                    <td className="w-1/3 text-left py-3 px-4">Johnson</td>
-                                    <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                    </td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                </tr>
-                                <tr>
-                                    <td className="w-1/3 text-left py-3 px-4">Oliver</td>
-                                    <td className="w-1/3 text-left py-3 px-4">Williams</td>
-                                    <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                    </td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                </tr>
-                                <tr className="bg-gray-100">
-                                    <td className="w-1/3 text-left py-3 px-4">Isabella</td>
-                                    <td className="w-1/3 text-left py-3 px-4">Brown</td>
-                                    <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
-                                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
-                                            <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-                                        </div>
-                                    </td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                    <td className="text-left py-3 px-4"><a className="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                </tr>
-                                </tbody>
+                                <UsersHead/>
+                                {user_rows}
                             </table>
                         </div>
                     </div>
@@ -82,14 +32,15 @@ class Users extends React.Component {
 class UsersHead extends React.Component {
     render() {
       return (
-        <thead>
+        <thead className="bg-gray-800 text-white">
           <tr>
-            <th>User ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Enabled</th>
-            <th>User Type</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">User ID</th>
+            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">First Name</th>
+            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last Name</th>
+            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Username</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Enabled</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">User Type</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Delete User</th>
           </tr>
         </thead>
       );
@@ -119,20 +70,25 @@ class UsersRow extends React.Component {
       const username = this.props.user.username;
       const user_type = this.props.user.user_type;
       return (
-        <tbody>
+        <tbody className="text-gray-700">
           <tr>
-            <td>{idx_user}</td>
-            <td>{first_name}</td>
-            <td>{last_name}</td>
-            <td>{username}</td>
-            <td>
-              <label class="toggle-switch">
-                <input type="checkbox" defaultChecked={this.state.enabled}
-                onChange={this.handleChange}></input>
-                <span class="toggle-slider"></span>
-              </label>
+            <td className="text-left py-3 px-4">{idx_user}</td>
+            <td className="w-1/3 text-left py-3 px-4">{first_name}</td>
+            <td className="w-1/3 text-left py-3 px-4">{last_name}</td>
+            <td className="w-1/3 text-left py-3 px-4">{username}</td>
+            <td className="text-center py-3 px-4">
+                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
+                    <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"
+                        defaultChecked={this.state.enabled}
+                        onChange={this.handleChange}>
+                    </input>
+                    <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
             </td>
-            <td>{user_type}</td>
+            <td className="text-left py-3 px-4">{user_type}</td>
+            <td className="text-center py-3 px-4">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="user-remove w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6" /></svg>
+            </td>
           </tr>
         </tbody>
       );
