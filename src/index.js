@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
 import Users from './Users';
+import Agents from './Agents';
 
 /*Import stylesheet*/
 import './index.css';
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route exact path="/admin" component={Home} />
           <Route path="/admin/login" component={Login} />
           <Route path="/admin/users" component={Users} />
+          <Route path="/admin/agents" component={Agents} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')

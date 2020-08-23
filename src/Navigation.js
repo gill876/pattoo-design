@@ -59,7 +59,7 @@ class Navigation extends React.Component {
                             </Link>
                         </li>
                         <li className="text-gray-700 font-bold py-1">
-                            <Link className="block px-4 flex justify-start border-r-4 border-white" to="/admin">
+                            <Link className={(this.props.current==="agents")? current : notCurrent} to="/admin/agents">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="presentation-chart-bar w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
                                 <span className="pt-1 pl-3">Agents</span>
                             </Link>
