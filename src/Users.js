@@ -14,7 +14,8 @@ class Users extends React.Component {
         return (
             <div className="grid md:grid-cols-4">
                 <Navigation/>
-                <div className="md:col-span-3 md:flex md:justify-center">
+                <div className="md:col-span-3 md:flex md:flex-col md:justify-center">
+                    <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Users</div>
                     <div className="md:px-32 py-8 w-full">
                         <div className="shadow overflow-y-scroll rounded border-b border-gray-200">
                             <table className="min-w-full bg-white">
@@ -104,7 +105,7 @@ class UsersRow extends React.Component {
                         defaultChecked={this.state.enabled}
                         onChange={this.handleChange}>
                     </input>
-                    <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <label htmlFor="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                 </div>
             </td>
             <td className="text-left py-3 px-4">{user_type}</td>
