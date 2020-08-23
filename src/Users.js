@@ -53,7 +53,8 @@ class UsersRow extends React.Component {
       this.state = {
         enabled: false,
         deleteButton: 'cursor-pointer',
-        deleteRow: ''
+        deleteRow: '',
+        deleteIconColor: 'red'
       }
   
       this.handleChange = this.handleChange.bind(this);
@@ -78,7 +79,8 @@ class UsersRow extends React.Component {
             this.setState({
                 deleteButton: 'cursor-pointer noclick-btn',
                 deleteRow: 'line-through noclick-btn',
-                enabled: false
+                enabled: false,
+                deleteIconColor: 'currentColor'
             }) : alert("Operation cancelled")
         }
     }
@@ -109,7 +111,7 @@ class UsersRow extends React.Component {
             <td className="text-center py-3 px-4">
                 <div className={this.state.deleteButton}
                     onClick={this.handleClick}>
-                    <svg fill="none" viewBox="0 0 24 24" stroke="red" className="user-remove w-6 h-6 noclick-btn"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6" /></svg>
+                    <svg fill="none" viewBox="0 0 24 24" stroke={this.state.deleteIconColor} className="user-remove w-6 h-6 noclick-btn"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6" /></svg>
                 </div>
             </td>
           </tr>
