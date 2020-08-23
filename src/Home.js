@@ -23,7 +23,7 @@ class Home extends React.Component {
                     modalBlur: {}
                 });
             }
-        } else if (targetID === "close-button" || targetID === "close-icon") {
+        } else if (targetID === "close-button" || targetID === "close-icon" || targetID === "close-out") {
             if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
                 this.setState({
                     modalView: {display: "none"},
@@ -43,7 +43,7 @@ class Home extends React.Component {
                     {/*Start*/}
                     <button
                         id="modal-button"
-                        className="bg-gray-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                        className="bg-gray-800 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                         onClick={this.handleClick}
@@ -51,9 +51,10 @@ class Home extends React.Component {
                             Open regular modal
                     </button>
                         <div 
+                            id="close-out"
                             style={this.state.modalView}
                             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-                            onClick={() => {"good"}}
+                            onClick={this.handleClick}
                             >
                             <div className="relative w-auto my-6 mx-auto max-w-3xl">
                                 {/*content*/}
