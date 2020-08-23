@@ -16,6 +16,7 @@ class Agents extends React.Component {
                     <div className="md:px-32 py-8 w-full">
                         <div className="shadow overflow-y-scroll rounded border-b border-gray-200">
                             <table className="min-w-full bg-white">
+                                <caption className="pl-4 pt-4 text-left tracking-widest uppercase font-semibold bg-gray-800 text-white">All Available Agents</caption>
                                 <AgentsHead/>
                                 {agent_rows}
                             </table>
@@ -32,12 +33,12 @@ class AgentsHead extends React.Component {
       return (
         <thead className="bg-gray-800 text-white">
           <tr>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Agent ID</th>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Polled Target</th>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Agent Program</th>
-            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Enabled</th>
-            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Date Created</th>
-            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Remove Agent</th>
+            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Agent ID</th>
+            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Polled Target</th>
+            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Agent Program</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Enabled</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Date Created</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Remove Agent</th>
           </tr>
         </thead>
       );
@@ -91,7 +92,7 @@ class AgentsRow extends React.Component {
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
             <td className="w-1/3 text-left py-3 px-4">{agent_id}</td>
-            <td className="w-1/3 text-left py-3 px-4">{agent_polled_target}</td>
+            <td className="w-1/3 text-left py-3 px-4 hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
             <td className="w-1/3 text-left py-3 px-4">{agent_program}</td>
             <td className="text-center py-3 px-4">
                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
