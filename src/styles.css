@@ -11,7 +11,12 @@
     right: 0;
     border-color: #68D391;
 }
+
 .toggle-checkbox:checked + .toggle-label {
     @apply: bg-green-400;
     background-color: #68D391;
+}
+
+.noclick-btn {
+    pointer-events: none;
 }
