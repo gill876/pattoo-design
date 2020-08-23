@@ -25,7 +25,7 @@ class Users extends React.Component {
                                     <td className="w-1/3 text-left py-3 px-4">Lian</td>
                                     <td className="w-1/3 text-left py-3 px-4">Smith</td>
                                     <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                                             <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
                                             <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                         </div>
@@ -37,7 +37,7 @@ class Users extends React.Component {
                                     <td className="w-1/3 text-left py-3 px-4">Emma</td>
                                     <td className="w-1/3 text-left py-3 px-4">Johnson</td>
                                     <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                                             <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
                                             <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                         </div>
@@ -49,7 +49,7 @@ class Users extends React.Component {
                                     <td className="w-1/3 text-left py-3 px-4">Oliver</td>
                                     <td className="w-1/3 text-left py-3 px-4">Williams</td>
                                     <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                                             <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
                                             <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                         </div>
@@ -61,7 +61,7 @@ class Users extends React.Component {
                                     <td className="w-1/3 text-left py-3 px-4">Isabella</td>
                                     <td className="w-1/3 text-left py-3 px-4">Brown</td>
                                     <td>
-                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                                             <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
                                             <label for="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                         </div>
