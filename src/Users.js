@@ -13,7 +13,7 @@ class Users extends React.Component {
         );
         return (
             <div className="grid md:grid-cols-4">
-                <Navigation/>
+                <Navigation current={"users"}/>
                 <div className="md:col-span-3 md:flex md:flex-col md:justify-center">
                     <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Users</div>
                     <div className="md:px-32 py-8 w-full">

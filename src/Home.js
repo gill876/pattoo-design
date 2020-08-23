@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 class Home extends React.Component {
     render() {
         return (
-        <Navigation/>
+        <Navigation current={"home"}/>
         );
     }
 }
