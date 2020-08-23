@@ -2,6 +2,37 @@ import React from 'react';
 import Navigation from './Navigation';
 
 class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalView: {display: "none"},
+            modalBlur: {display: "none"}
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        const target = event.target;
+        const targetID = target.id;
+
+        if (targetID === "modal-button") {
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({display: "none"})) {
+                this.setState({
+                    modalView: {},
+                    modalBlur: {}
+                });
+            }
+        } else if (targetID === "close-button" || targetID === "close-icon") {
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
+                this.setState({
+                    modalView: {display: "none"},
+                    modalBlur: {display: "none"}
+                });
+            }
+        }
+    }
+
     render() {
         return (
             <div className="grid md:grid-cols-7">
@@ -10,7 +41,17 @@ class Home extends React.Component {
                     <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Home</div>
                     <div className="md:px-20 py-8 w-full">
                     {/*Start*/}
+                    <button
+                        id="modal-button"
+                        className="bg-gray-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                        type="button"
+                        style={{ transition: "all .15s ease" }}
+                        onClick={this.handleClick}
+                        >
+                            Open regular modal
+                    </button>
                         <div 
+                            style={this.state.modalView}
                             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
                             onClick={() => {"good"}}
                             >
@@ -24,10 +65,12 @@ class Home extends React.Component {
                                         </h3>
                                         <button
                                             className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                            onClick={() => {"good"}}
                                         >
-                                            <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                            ×
+                                            <span
+                                                id="close-icon"
+                                                onClick={this.handleClick}
+                                                className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                                    ×
                                             </span>
                                         </button>
                                     </div>
@@ -44,10 +87,11 @@ class Home extends React.Component {
                                     {/*footer*/}
                                     <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
                                         <button
+                                            id="close-button"
                                             className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                                             type="button"
                                             style={{ transition: "all .15s ease" }}
-                                            onClick={() => {"good"}}
+                                            onClick={this.handleClick}
                                         >
                                             Close
                                         </button>
@@ -63,7 +107,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>   
+                        <div style={this.state.modalBlur} className="opacity-25 fixed inset-0 z-40 bg-black"></div>   
                     {/*End*/}
                     </div>
                 </div>
