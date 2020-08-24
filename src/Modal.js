@@ -3,33 +3,11 @@ import React from 'react';
 class Modal extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modalView: {display: "none"},
-            modalBlur: {display: "none"}
-        }
-
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(event) {
-        const target = event.target;
-        const targetID = target.id;
-
-        if (targetID === "modal-button") {
-            if (JSON.stringify(this.state.modalView) === JSON.stringify({display: "none"})) {
-                this.setState({
-                    modalView: {},
-                    modalBlur: {}
-                });
-            }
-        } else if (targetID === "close-button" || targetID === "close-icon" || targetID === "close-out") {
-            if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
-                this.setState({
-                    modalView: {display: "none"},
-                    modalBlur: {display: "none"}
-                });
-            }
-        }
+        this.props.modalClick(event);
     }
 
     render() {
@@ -50,7 +28,7 @@ class Modal extends React.Component {
                     </button>
                         <div 
                             id="close-out"
-                            style={this.state.modalView}
+                            style={this.props.mStyle.vIew}
                             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
                             onClick={this.handleClick}
                             >
@@ -106,7 +84,7 @@ class Modal extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div style={this.state.modalBlur} className="opacity-25 fixed inset-0 z-40 bg-black"></div>   
+                        <div style={this.props.mStyle.bLur} className="opacity-25 fixed inset-0 z-40 bg-black"></div>   
                     {/*End*/}
                     </div>
                 </div>
