@@ -111,15 +111,16 @@ class AgentsRow extends React.Component {
   
     render() {
         const modalStyle = {bLur: this.state.modalBlur, vIew: this.state.modalView};
-        const modalElements = {title: "Modal Title",
-                                content: <p className="my-4 text-gray-600 text-lg leading-relaxed">
-                                            I always felt like I could do anything. That’s the main
-                                            thing people are controlled by! Thoughts- their perception
-                                            of themselves! They're slowed down by their perception of
-                                            themselves. If you're taught you can’t do anything, you
-                                            won’t do anything. I was taught I could do everything.
-                                            </p>
-                                };
+        const modalElements = {
+            title: "Modal Title",
+            content: <p className="my-4 text-gray-600 text-lg leading-relaxed">
+                        I always felt like I could do anything. That’s the main
+                        thing people are controlled by! Thoughts- their perception
+                        of themselves! They're slowed down by their perception of
+                        themselves. If you're taught you can’t do anything, you
+                        won’t do anything. I was taught I could do everything.
+                        </p>
+        };
 
         const agent_id = this.props.agent.agent_id;
         const agent_polled_target = this.props.agent.agent_polled_target;
