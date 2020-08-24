@@ -16,13 +16,11 @@ class Users extends React.Component {
                     <Navigation current={"users"}/>
                     <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
                         <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Users</div>
-                        <div className="md:px-20 py-8 w-full">
-                            <div className="shadow overflow-y-scroll rounded border-b border-gray-200">
-                                <table className="min-w-full bg-white">
-                                    <UsersHead/>
-                                    {user_rows}
-                                </table>
-                            </div>
+                        <div className="md:px-20 py-8 w-auto md:flex md:flex-col md:justify-center">
+                            <table className="w-auto bg-white overflow-y-scroll shadow rounded border-b border-gray-200 justify-center">
+                                <UsersHead/>
+                                {user_rows}
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -36,9 +34,9 @@ class UsersHead extends React.Component {
         <thead className="bg-gray-800 text-white">
           <tr>
             <th className="text-left py-3 px-4 uppercase font-semibold text-sm">User ID</th>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">First Name</th>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last Name</th>
-            <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Username</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">First Name</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Last Name</th>
+            <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Username</th>
             <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Enabled</th>
             <th className="text-left py-3 px-4 uppercase font-semibold text-sm">User Type</th>
             <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Delete User</th>
@@ -96,9 +94,9 @@ class UsersRow extends React.Component {
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
             <td className="text-left py-3 px-4">{idx_user}</td>
-            <td className="w-1/3 text-left py-3 px-4">{first_name}</td>
-            <td className="w-1/3 text-left py-3 px-4">{last_name}</td>
-            <td className="w-1/3 text-left py-3 px-4">{username}</td>
+            <td className="text-left py-3 px-4">{first_name}</td>
+            <td className="text-left py-3 px-4">{last_name}</td>
+            <td className="text-left py-3 px-4">{username}</td>
             <td className="text-center py-3 px-4">
                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                     <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"
