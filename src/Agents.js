@@ -14,8 +14,8 @@ class Agents extends React.Component {
                 <Navigation current={"agents"}/>
                 <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
                     <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Agents</div>
-                    <div className="md:px-10 py-8 w-auto">
-                        <table className="w-auto bg-white shadow overflow-scroll rounded border-b border-gray-200">
+                    <div className="md:px-10 py-8 w-auto md:flex md:flex-col md:justify-center">
+                        <table className="w-auto bg-white shadow overflow-y-scroll rounded border-b border-gray-200 justify-center">
                             <caption className="pl-4 pt-4 text-left tracking-widest uppercase font-semibold bg-gray-800 text-white">All Available Agents</caption>
                             <AgentsHead/>
                             {agent_rows}
