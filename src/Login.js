@@ -32,13 +32,13 @@ class Login extends React.Component {
         return (
         <div className="container flex content-center items-center min-h-screen min-w-full">
             <div className="flex flex-col items-center min-w-full">
-                <div className="items-center text-center font-mono text-base md:text-2xl font-bold tracking-wider my-5">
+                {/*<div className="items-center text-center font-mono text-base md:text-2xl font-bold tracking-wider my-5">
                     Welcome to the Management Portal
-                </div>
+                </div>*/}
 
                 <div className="items-center w-1/5 sm:w-1/6 flex flex-col items-center">
                     <img className="" src="../img/pattoo.png" alt="Pattoo Logo"/>
-                    <span className="mt-5 uppercase text-center">sign in</span>
+                    <span className="mt-5 uppercase text-base md:text-2xl text-center">sign in</span>
                 </div>  
 
                 <div>
