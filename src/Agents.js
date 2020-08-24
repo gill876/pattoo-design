@@ -13,14 +13,12 @@ class Agents extends React.Component {
                 <Navigation current={"agents"}/>
                 <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
                     <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Agents</div>
-                    <div className="md:px-20 py-8 w-full">
-                        <div className="shadow overflow-y-scroll rounded border-b border-gray-200">
-                            <table className="min-w-full bg-white">
-                                <caption className="pl-4 pt-4 text-left tracking-widest uppercase font-semibold bg-gray-800 text-white">All Available Agents</caption>
-                                <AgentsHead/>
-                                {agent_rows}
-                            </table>
-                        </div>
+                    <div className="md:px-10 py-8 w-auto">
+                        <table className="w-auto bg-white shadow overflow-scroll rounded border-b border-gray-200">
+                            <caption className="pl-4 pt-4 text-left tracking-widest uppercase font-semibold bg-gray-800 text-white">All Available Agents</caption>
+                            <AgentsHead/>
+                            {agent_rows}
+                        </table>
                     </div>
                 </div>
             </div>
@@ -33,9 +31,9 @@ class AgentsHead extends React.Component {
       return (
         <thead className="bg-gray-800 text-white">
           <tr>
-            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Agent ID</th>
-            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Polled Target</th>
-            <th className="w-1/3 text-left pb-3 px-4 uppercase font-semibold text-sm">Agent Program</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Agent ID</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Polled Target</th>
+            <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Agent Program</th>
             <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Enabled</th>
             <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Date Created</th>
             <th className="text-left pb-3 px-4 uppercase font-semibold text-sm">Remove Agent</th>
@@ -91,9 +89,9 @@ class AgentsRow extends React.Component {
       return (
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
-            <td className="w-1/3 text-left py-3 px-4">{agent_id}</td>
-            <td className="w-1/3 text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
-            <td className="w-1/3 text-left py-3 px-4">{agent_program}</td>
+            <td className="text-left py-3 px-4">{agent_id}</td>
+            <td className="text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
+            <td className="text-left py-3 px-4">{agent_program}</td>
             <td className="text-center py-3 px-4">
                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
                     <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"
