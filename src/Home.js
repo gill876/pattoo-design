@@ -48,7 +48,21 @@ class Home extends React.Component {
         return (
             <div className="grid md:grid-cols-7">
                 <Navigation current={"home"}/>
-                <Modal mElements={modalElements} mStyle={modalStyle} modalClick={this.handleClick}/>
+                <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
+                    <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Home</div>
+                    <div className="">
+                        <button
+                            id="modal-button"
+                            className="bg-gray-800 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                            type="button"
+                            style={{ transition: "all .15s ease" }}
+                            onClick={this.handleClick}
+                            >
+                                Open regular modal
+                        </button>
+                    </div>
+                    <Modal mElements={modalElements} mStyle={modalStyle} modalClick={this.handleClick}/>
+                </div>
             </div>
         );
     }

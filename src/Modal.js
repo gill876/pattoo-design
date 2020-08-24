@@ -14,18 +14,8 @@ class Modal extends React.Component {
         return (
             <div className="grid md:grid-cols-7">
                 <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
-                    <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Home</div>
                     <div className="md:px-20 py-8 w-full">
                     {/*Start*/}
-                    <button
-                        id="modal-button"
-                        className="bg-gray-800 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                        type="button"
-                        style={{ transition: "all .15s ease" }}
-                        onClick={this.handleClick}
-                        >
-                            Open regular modal
-                    </button>
                         <div 
                             id="close-out"
                             style={this.props.mStyle.vIew}
