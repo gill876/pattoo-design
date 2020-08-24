@@ -31,6 +31,14 @@ class Home extends React.Component {
                     modalBlur: {display: "none"}
                 });
             }
+        } else if (targetID === "save-button") {
+            alert("Changes saved");
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
+                this.setState({
+                    modalView: {display: "none"},
+                    modalBlur: {display: "none"}
+                });
+            }
         }
     }
 
