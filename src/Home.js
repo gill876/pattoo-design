@@ -36,10 +36,19 @@ class Home extends React.Component {
 
     render() {
         const modalStyle = {bLur: this.state.modalBlur, vIew: this.state.modalView};
+        const modalElements = {title: "Modal Title",
+                                content: <p className="my-4 text-gray-600 text-lg leading-relaxed">
+                                            I always felt like I could do anything. That’s the main
+                                            thing people are controlled by! Thoughts- their perception
+                                            of themselves! They're slowed down by their perception of
+                                            themselves. If you're taught you can’t do anything, you
+                                            won’t do anything. I was taught I could do everything.
+                                            </p>
+                                };
         return (
             <div className="grid md:grid-cols-7">
                 <Navigation current={"home"}/>
-                <Modal mStyle={modalStyle} modalClick={this.handleClick}/>
+                <Modal mElements={modalElements} mStyle={modalStyle} modalClick={this.handleClick}/>
             </div>
         );
     }
