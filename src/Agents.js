@@ -128,8 +128,11 @@ class AgentsRow extends React.Component {
       return (
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
-            <td className="text-left py-3 px-4 relative"
+            <td className="text-left py-3 px-4 relative hover-trigger"
                 >
+                <div class="absolute bg-white border border-grey-100 p-1 z-10 hover-target">
+                    {agent_id}
+                </div>
                 {agent_id.substring(0, 10) + "..."}
             </td>
             <td 

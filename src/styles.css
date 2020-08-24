@@ -20,3 +20,11 @@
 .noclick-btn {
     pointer-events: none;
 }
+
+.hover-trigger .hover-target {
+    display: none;
+}
+
+.hover-trigger:hover .hover-target {
+    display: block;
+}
