@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from './Navigation';
+import Modal from './Modal';
 
 class Agents extends React.Component {
     render() {
@@ -50,7 +51,9 @@ class AgentsRow extends React.Component {
         enabled: false,
         deleteButton: 'cursor-pointer',
         deleteRow: '',
-        deleteIconColor: 'red'
+        deleteIconColor: 'red',
+        modalView: {display: "none"},
+        modalBlur: {display: "none"}
       }
   
       this.handleChange = this.handleChange.bind(this);
@@ -69,6 +72,7 @@ class AgentsRow extends React.Component {
 
     handleClick(event) {
         const target = event.target;
+        const targetID = target.id;
         if (target.className === 'cursor-pointer') {
             const confirm = prompt("Enter \"OK\" to permanently delete user", "OK");
             (confirm === "OK")? 
@@ -79,9 +83,44 @@ class AgentsRow extends React.Component {
                 deleteIconColor: 'currentColor'
             }) : alert("Operation cancelled")
         }
+
+        if (targetID === "modal-button") {
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({display: "none"})) {
+                this.setState({
+                    modalView: {},
+                    modalBlur: {}
+                });
+            }
+        } else if (targetID === "close-button" || targetID === "close-icon" || targetID === "close-out") {
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
+                this.setState({
+                    modalView: {display: "none"},
+                    modalBlur: {display: "none"}
+                });
+            }
+        } else if (targetID === "save-button") {
+            alert("Changes saved");
+            if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
+                this.setState({
+                    modalView: {display: "none"},
+                    modalBlur: {display: "none"}
+                });
+            }
+        }
     }
   
     render() {
+        const modalStyle = {bLur: this.state.modalBlur, vIew: this.state.modalView};
+        const modalElements = {title: "Modal Title",
+                                content: <p className="my-4 text-gray-600 text-lg leading-relaxed">
+                                            I always felt like I could do anything. That’s the main
+                                            thing people are controlled by! Thoughts- their perception
+                                            of themselves! They're slowed down by their perception of
+                                            themselves. If you're taught you can’t do anything, you
+                                            won’t do anything. I was taught I could do everything.
+                                            </p>
+                                };
+
         const agent_id = this.props.agent.agent_id;
         const agent_polled_target = this.props.agent.agent_polled_target;
         const agent_program = this.props.agent.agent_program;
@@ -90,7 +129,12 @@ class AgentsRow extends React.Component {
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
             <td className="text-left py-3 px-4">{agent_id}</td>
-            <td className="text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer">{agent_polled_target}</td>
+            <td 
+                id="modal-button"
+                className="text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer"
+                onClick={this.handleClick}>
+                {agent_polled_target}
+            </td>
             <td className="text-left py-3 px-4">{agent_program}</td>
             <td className="text-center py-3 px-4">
                 <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
@@ -109,6 +153,7 @@ class AgentsRow extends React.Component {
                 </div>
             </td>
           </tr>
+          <Modal mElements={modalElements} mStyle={modalStyle} modalClick={this.handleClick}/>
         </tbody>
       );
     };
