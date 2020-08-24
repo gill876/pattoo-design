@@ -128,7 +128,7 @@ class AgentsRow extends React.Component {
       return (
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
-            <td className="text-left py-3 px-4">{agent_id}</td>
+            <td className="text-left py-3 px-4">{agent_id.substring(0, 10) + "..."}</td>
             <td 
                 id="modal-button"
                 className="text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer"
