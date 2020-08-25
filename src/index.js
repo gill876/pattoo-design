@@ -10,6 +10,7 @@ import Home from './Home';
 import Login from './Login';
 import Users from './Users';
 import Agents from './Agents';
+import PurgeData from './PurgeData';
 
 /*Import stylesheet*/
 import './index.css';
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="/admin/login" component={Login} />
           <Route path="/admin/users" component={Users} />
           <Route path="/admin/agents" component={Agents} />
+          <Route path="/admin/purge" component={PurgeData} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')

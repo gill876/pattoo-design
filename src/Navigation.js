@@ -65,7 +65,7 @@ class Navigation extends React.Component {
                             </Link>
                         </li>
                         <li className="text-gray-700 font-bold py-1">
-                            <Link className="block px-4 flex justify-start border-r-4 border-white" to="/admin">
+                            <Link className={(this.props.current==="purge")? current : notCurrent} to="/admin/purge">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="trash w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                                 <span className="pt-1 pl-3">Purge Data</span>
                             </Link>
