@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Modal from './Modal';
+import Datapoint from './Datapoint';
 
 class Agents extends React.Component {
     render() {
@@ -111,22 +112,26 @@ class AgentsRow extends React.Component {
     }
   
     render() {
-        const modalStyle = {bLur: this.state.modalBlur, vIew: this.state.modalView};
-        const modalElements = {
-            title: "Modal Title",
-            content: <p className="my-4 text-gray-600 text-lg leading-relaxed">
-                        I always felt like I could do anything. That’s the main
-                        thing people are controlled by! Thoughts- their perception
-                        of themselves! They're slowed down by their perception of
-                        themselves. If you're taught you can’t do anything, you
-                        won’t do anything. I was taught I could do everything.
-                        </p>
-        };
-
         const agent_id = this.props.agent.agent_id;
         const agent_polled_target = this.props.agent.agent_polled_target;
         const agent_program = this.props.agent.agent_program;
         const ts_created = this.props.agent.ts_created;
+
+        //Use Agent ID to retrieve the datapoints for that agent
+        const modalStyle = {bLur: this.state.modalBlur, vIew: this.state.modalView};
+        //Fetch server for actual data
+        const test_datapoints = [
+            {datapoint_name: "User (Percent CPU Usage)", polling_interval: "5000", ts_created: "2020-07-25 16:26:56", ts_modified: "2020-08-24 17:10:13"},
+            {datapoint_name: "System (Percent CPU Usage)", polling_interval: "10000", ts_created: "2020-07-25 16:26:56", ts_modified: "2020-08-24 17:10:13"},
+            {datapoint_name: "Idle (Percent CPU Usage)", polling_interval: "100", ts_created: "2020-07-25 16:26:56", ts_modified: "2020-08-24 17:10:13"}
+        ]
+
+        const datapoints = <Datapoint datapoints={test_datapoints}/>
+        const title = "Datapoints for " + agent_id.substring(0, 10) + "...";
+        const modalElements = {
+            title: title,
+            content: datapoints
+        };
       return (
         <tbody className="text-gray-700">
           <tr className={this.state.deleteRow}>
