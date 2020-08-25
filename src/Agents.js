@@ -11,11 +11,11 @@ class Agents extends React.Component {
             <AgentsRow key={agent.agent_id} agent={agent}/>
         );
         return (
-            <div className="grid md:grid-cols-7">
+            <div className="flex flex-col md:grid md:grid-cols-7">
                 <Navigation current={"agents"}/>
-                <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
+                <div className="flex flex-col justify-center md:col-span-6">
                     <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Agents</div>
-                    <div className="md:px-10 py-8 w-auto md:flex md:flex-col md:justify-center">
+                    <div className="md:px-10 py-8 w-auto md:flex md:flex-col md:justify-center overflow-x-scroll">
                         <table className="w-auto bg-white shadow overflow-y-scroll rounded border-b border-gray-200 justify-center">
                             <caption className="pl-4 pt-4 text-left tracking-widest uppercase font-semibold bg-gray-800 text-white">All Available Agents</caption>
                             <AgentsHead/>

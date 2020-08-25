@@ -12,11 +12,11 @@ class Users extends React.Component {
                 <UsersRow key={user.idx_user} user={user}/>
             );
             return (
-                <div className="grid md:grid-cols-7">
+                <div className="flex flex-col md:grid md:grid-cols-7">
                     <Navigation current={"users"}/>
-                    <div className="md:col-span-6 md:flex md:flex-col md:justify-center">
+                    <div className="flex flex-col justify-center md:col-span-6">
                         <div className="text-lg md:text-3xl text-center font-bold tracking-wider mt-3 pt-2">Manage Users</div>
-                        <div className="md:px-20 py-8 w-auto md:flex md:flex-col md:justify-center">
+                        <div className="md:px-10 py-8 w-auto md:flex md:flex-col md:justify-center overflow-x-scroll">
                             <table className="w-auto bg-white overflow-y-scroll shadow rounded border-b border-gray-200 justify-center">
                                 <UsersHead/>
                                 {user_rows}
