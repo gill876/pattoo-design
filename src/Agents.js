@@ -94,6 +94,7 @@ class AgentsRow extends React.Component {
                 });
             }
         } else if (targetID === "close-button" || targetID === "close-icon" || targetID === "close-out") {
+            alert("閉める")
             if (JSON.stringify(this.state.modalView) === JSON.stringify({})) {
                 this.setState({
                     modalView: {display: "none"},
