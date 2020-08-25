@@ -85,6 +85,7 @@ class AgentsRow extends React.Component {
         }
 
         if (targetID === "modal-button") {
+            //alert(target.dataset.value)//Gets data inside td
             if (JSON.stringify(this.state.modalView) === JSON.stringify({display: "none"})) {
                 this.setState({
                     modalView: {},
@@ -139,7 +140,8 @@ class AgentsRow extends React.Component {
             <td 
                 id="modal-button"
                 className="text-left py-3 px-4 text-black hover:text-blue-500 cursor-pointer"
-                onClick={this.handleClick}>
+                onClick={this.handleClick}
+                data-value={agent_id}>
                 {agent_polled_target}
             </td>
             <td className="text-left py-3 px-4">{agent_program}</td>
