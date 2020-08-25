@@ -61,13 +61,19 @@ class DatapointRow extends React.Component {
                 <tr>
                     <td className="text-left py-1 px-2">{datapoint_name}</td>
                     <td className="text-left py-1 px-2">{polling_interval}</td>
-                    <td className="text-center py-1 px-2">
-                        <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
-                            <input type="checkbox" name="toggle" id="toggle" className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"
-                                defaultChecked={this.state.enabled}
-                                onChange={this.handleChange}>
-                            </input>
-                            <label htmlFor="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <td className="text-left py-3 px-4">
+                        <div className="relative inline-block w-10 mr-2 align-middle select-none">
+                            <label className="switch">
+                                <input
+                                    type="checkbox"
+                                    name="toggle"
+                                    id="toggle"
+                                    defaultChecked={this.state.enabled}
+                                    onChange={this.handleChange}
+                                    >
+                                </input>
+                                <span className="slider round"></span>
+                            </label>
                         </div>
                     </td>
                     <td className="text-left py-1 px-2">{ts_created}</td>
