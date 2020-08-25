@@ -152,7 +152,7 @@ class AgentsRow extends React.Component {
             </td>
             <td className="text-left py-3 px-4">{agent_program}</td>
             <td className="text-left py-3 px-4">
-                <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-600 ease-in">
+                <div className="relative inline-block w-10 mr-2 align-middle select-none">
                     <label className="switch">
                         <input
                             type="checkbox"
